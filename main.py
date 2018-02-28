@@ -11,7 +11,6 @@ print(wordNo, 'words loaded')
 
 word = wordList[randint(0, wordNo - 1)]
 result = "_" * len(word)
-ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 guessNo = 10
 
 def guess_character(character):
@@ -32,10 +31,12 @@ def guess_character(character):
 
 print("This word contains", len(word), "letters.")
 while True:
+  print("---------------------------------")
   inputLetter = input("Enter a letter:")
-  if len(inputLetter) == 1 and inputLetter in ALPHABET:
+  if len(inputLetter) == 1 and inputLetter.isalpha():
     guess_character(inputLetter)
-  
+  else:
+    print("You entered more than 1 character or an invalid character!")
   if word == result:
     print("You guessed the word!!11!1!!!!1!")
     break
