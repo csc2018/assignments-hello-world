@@ -34,7 +34,7 @@ while True:
   print("---------------------------------")
   inputLetter = input("Enter a letter:")
   if len(inputLetter) == 1 and inputLetter.isalpha():
-    guess_character(inputLetter)
+    guess_character(inputLetter.lower())
   else:
     print("You entered more than 1 character or an invalid character!")
   if word == result:
